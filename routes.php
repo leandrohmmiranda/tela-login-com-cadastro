@@ -1,7 +1,4 @@
 <?php
-// Arquivo de Rotas (routes.php)
-
-// Inclua o arquivo de configuração do banco de dados
 require_once('config.php');
 
 // Verifique a sessão de autenticação
@@ -21,7 +18,7 @@ switch ($path) {
     case '/cartoes':
         // Verifique a autenticação
         if (isset($_SESSION['email'])) {
-            include('views/cartoes.php');
+            include('views/index.php');
         } else {
             header('Location: /login');
         }

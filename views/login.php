@@ -1,6 +1,6 @@
 <?php
 require_once('config.php');
-
+// cookie e cripto senha
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado->num_rows > 0) {
         // Login bem-sucedido
         // Redirecione o usuário para a página de gerenciamento de cartões de crédito
-        header('Location: cartoes.php');
+        header('Location: index.php');
     } else {
         echo "Credenciais inválidas";
     }

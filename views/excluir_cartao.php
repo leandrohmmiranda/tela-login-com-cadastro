@@ -15,4 +15,4 @@ $sql = "DELETE FROM cartoes WHERE id = $id";
 $conexao->query($sql);
 
 // Redirecione de volta para a página de cartões após excluir o cartão
-header('Location: cartoes.php');
+header('Location: index.php');

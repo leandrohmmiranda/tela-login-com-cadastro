@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexao->query($sql);
 
     // Redirecione de volta para a página de cartões após editar o cartão
-    header('Location: cartoes.php');
+    header('Location: index.php');
 } else {
     $id = $_GET['id'];
     // Recupere os dados do cartão para edição
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="Salvar Alterações">
     </form>
     <br>
-    <a href="cartoes.php">Voltar para seus cartões</a>
+    <a href="index.php">Voltar para seus cartões</a>
 </body>
 
 </html>

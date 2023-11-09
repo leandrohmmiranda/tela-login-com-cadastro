@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexao->query($sql);
 
     // Redirecione de volta para a página de cartões após adicionar um novo cartão
-    header('Location: cartoes.php');
+    header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="Adicionar Cartão">
     </form>
     <br>
-    <a href="cartoes.php">Voltar para seus cartões</a>
+    <a href="index.php">Voltar para seus cartões</a>
 </body>
 
 </html>
