@@ -1,7 +1,7 @@
 <?php
 require_once('config.php');
 
-// Verifique a sessão de autenticação
+// Verificar a sessão de autenticação
 session_start();
 if (!isset($_SESSION['email'])) {
     header('Location: login.php');
@@ -30,19 +30,13 @@ function listarCartoes($conexao, $email)
     echo "<a href='adicionar_cartao.php'>Adicionar Cartão</a>";
 }
 
-// Exiba a lista de cartões
+// Exibir a Lista de cartões
 listarCartoes($conexao, $_SESSION['email']);
+
+$pageTitle = "Lista de cartões";
+$content = __FILE__;
+include("layout.php");
 ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Cartões de Crédito</title>
-</head>
-
-<body>
-    <br>
-    <a href="logout.php">Sair</a>
-</body>
-
-</html>
+<h1>Cartões de Crédito</h1>
+<br>
+<a href="logout.php">Sair</a>

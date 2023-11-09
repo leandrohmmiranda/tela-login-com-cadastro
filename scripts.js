@@ -20,7 +20,7 @@ document.getElementById("datadenascimento").addEventListener("input", function (
     if (event.inputType === 'deleteContentBackward') return;
     this.value = this.value.replace(/\D/g, '').replace(/^(\d{2})(\d)/, '$1/$2').replace(/(\d{2})(\d)/, '$1/$2').slice(0, 10);
 });
-// identificar cep
+// * identificar cep
 // identificar bandeira do cartao
 document.getElementById("numeroCartao").addEventListener("input", function () {
     let numeroCartao = this.value.replace(/\D/g, '');
@@ -39,18 +39,11 @@ document.getElementById("numeroCartao").addEventListener("input", function () {
         $('.bandeira-cartao').html("<img src='https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/42x20/" + imgbandeira + ".png'>");
     }
 });
+// * 
 var tgdeveloper = {
-
-    /**
-    * getCardFlag
-    * Retorna a bandeira do cartão com base no número
-    *
-    * @param cardnumber
-    */
     getCardFlag: function (cardnumber) {
         // Remove caracteres não numéricos do número do cartão
         var cardnumber = cardnumber.replace(/[^0-9]+/g, '');
-
         // Padrões para identificar bandeiras de cartão
         var cards = {
             visa: /^4[0-9]{12}(?:[0-9]{3})/,
@@ -63,18 +56,15 @@ var tgdeveloper = {
             jcb: /^(?:2131|1800|35\d{3})\d{11}/,
             aura: /^(5078\d{2})(\d{2})(\d{11})$/
         };
-
         // Verifica cada padrão para determinar a bandeira do cartão
         for (var flag in cards) {
             if (cards[flag].test(cardnumber)) {
                 return flag;
             }
         }
-
         // Retorna false se não encontrar nenhuma correspondência
         return false;
     }
-
 };
 
 // Mascara email

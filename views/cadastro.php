@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO usuarios (email, senha, celular, cpf_cnpj, data_nasc, cep) VALUES ('$email', '$senha', '$celular', '$cpf_cnpj', '$data_nasc', '$cep')";
     $conexao->query($sql);
 
-    // Redirecione o usuário para a página de login
+    // Redirecionar o usuário para a página de login
     header('Location: login.php');
 }
 $pageTitle = "Página de Cadastro";
